@@ -1,1 +1,6 @@
-# Proyecto2doBim
+# Proyecto2doBimestre
+## Integrantes: 
+
+-David Lasso
+
+-Rommel Ojeda
