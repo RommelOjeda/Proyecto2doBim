@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.9.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.2.1"></script>
+
+    <title>DataViz - Proyecto Programaci&oacute;n Funcional y Reactiva</title>
+
+    <style media="screen">
+        /* Add space between Vega-Embed links  */
+        .vega-actions a {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Practica</h1>
+<!-- Container for the visualization -->
+<div id="vis1"></div>
+<div id="vis2"></div>
+<div id="vis3"></div>
+<div id="vis4"></div>
+<div id="vis5"></div>
+<div id="vis6"></div>
+<script>
+    // Assign the specification to a local variable vlSpec.
+    const consul1 = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+        "data": {"url": "https://raw.githubusercontent.com/ElDavidLasso/PracticaB2PROG/master/data/tipoCombus.csv"},
+        "mark": {"type": "bar"},
+        "encoding": {
+            "x": {"aggregate":"sum",
+                "field": "cantidad",
+                "title": "Cantidad"
+            },
+            "y": {"field": "combustible",
+                "type": "nominal",
+                "title": "Combustibles"
+            },
+            "color": {"field": "clase",
+                "type": "nominal",
+                "title": "Clases"
+            }
+        }
+    };
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#vis1', consul1);
+
+    const consul2 = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+        "data": {"url": "https://raw.githubusercontent.com/ElDavidLasso/PracticaB2PROG/master/data/tipoCombus.csv"},
+        "mark": {"type": "circle"},
+        "encoding": {
+            "x": {
+                "field": "cantidad",
+                "title": "Cantidad"
+            },
+            "y": {"field": "combustible",
+                "type": "nominal",
+                "title": "Combustibles"
+            },
+            "color": {"field": "clase",
+                "type": "nominal",
+                "title": "Clases"
+            }
+        }
+    };
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#vis2', consul2);
+
+    const consul3 = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+        "data": {"url": "https://raw.githubusercontent.com/ElDavidLasso/PracticaB2PROG/master/data/tipoCombus.csv"},
+    };
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#vis3', consul3);
+    const consul4 = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+        "data": {"url": "https://raw.githubusercontent.com/ElDavidLasso/PracticaB2PROG/master/data/sevicioVehi.csv"},
+        "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
+        "encoding": {
+            "x": {"field": "servicio",
+                "type": "nominal",
+                "title": "Servicio"
+            },
+            "y": {"aggregate":"sum",
+                "field": "cantidad",
+                "title": "Cantidad",
+            },
+
+            "color": {"field": "clase",
+                "type": "nominal",
+                "title": "Clases"
+            }
+        }
+    };
+    vegaEmbed('#vis4', consul4);
+    const consul5 = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+        "data": {"url": "https://raw.githubusercontent.com/ElDavidLasso/PracticaB2PROG/master/data/sevicioVehi.csv"},
+        "mark": {"type": "circle", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
+        "encoding": {
+            "x": {"field": "servicio",
+                "type": "nominal",
+                "title": "Servicio"
+            },
+            "y": {"aggregate":"sum",
+                "field": "cantidad",
+                "title": "Cantidad",
+            },
+
+            "color": {"field": "clase",
+                "type": "nominal",
+                "title": "Clases"
+            }
+        }
+    };
+    vegaEmbed('#vis5', consul5);
+    const consul6 = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+        "data": {"url": "https://raw.githubusercontent.com/ElDavidLasso/PracticaB2PROG/master/data/distriVehi.csv"},
+        "mark": "line",
+        "encoding": {
+            "x": {"field": "servicio", "type": "nominal","title": "Servicio"},
+            "y": {"aggregate":"sum","field": "cantidad","type":"quantitative","title": "Cantidad"}
+        }
+    };
+    vegaEmbed('#vis6', consul6);
+</script>
+</body>
+</html>
