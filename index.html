@@ -87,7 +87,10 @@
     const consul4 = {
         "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
         "data": {"url": "https://raw.githubusercontent.com/RommelOjeda/Proyecto2doBim/main/data/camionetas.csv"},
+        "title":{"text": "Numero de camionetas tiene el estado y cuáles son sus marcas, clasificadas por provincia"},
         "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
+        "width": 1100,
+        "height": 650,
         "encoding": {
             "x": {"field": "provincia",
                 "type": "nominal",
@@ -107,7 +110,10 @@
     const consul5 = {
         "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
         "data": {"url": "https://raw.githubusercontent.com/RommelOjeda/Proyecto2doBim/main/data/dieselTanquero.csv"},
+        "title":{"text": "Numero de Tanqueros usan diesel y cuáles son sus marcas, clasificadas por servicio"},
         "mark": {"type": "circle", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
+        "width": 1100,
+        "height": 600,
         "encoding": {
             "x": {"field": "marca",
                 "type": "nominal",
@@ -131,7 +137,10 @@
         "data": {
             "url": "https://raw.githubusercontent.com/RommelOjeda/Proyecto2doBim/main/data/bmwParticular.csv"
         },
+        "title":{"text": "¿Cuántos BMW's son particulares y cual es su clase, clasificadas por provincia?"},
         "mark": "area",
+        "width": 1100,
+        "height": 600,
         "encoding": {
             "x": {"field": "provincia", "type": "nominal", "title": "Cantidad"},
             "y": {"aggregate":"sum",

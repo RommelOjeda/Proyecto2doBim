@@ -49,7 +49,7 @@ val modelo = values.map(row => (row.modelo, row.clase))
   .groupBy(identity).map({case (x , y)=> (x,y.length)})
 modelo.foreach(data => printf("%s,%s\n",data._1,data._2))
 
-//¿Cuántas camionetas tiene el estado y cuáles son sus marcas, clasificadas por provincia?
+//Numero de camionetas tiene el estado y cuáles son sus marcas, clasificadas por provincia
 val camionetas = values
   .filter(row =>
     row.servicio == "ESTADO" && row.clase == "Camioneta")
@@ -57,7 +57,7 @@ val camionetas = values
   .map({ case ((prov, marca), v) => (prov, marca, v.length)})
 camionetas.foreach(data => printf("%s, %s, %d\n", data._1, data._2, data._3))
 
-//¿Cuántos Tanqueros usan diesel y cuáles son sus marcas, clasificadas por servicio?
+//Numero de Tanqueros usan diesel y cuáles son sus marcas, clasificadas por servicio
 val dieselTanquero = values
   .filter(row =>
     row.combustible == "Diesel" && row.clase == "Tanquero")
