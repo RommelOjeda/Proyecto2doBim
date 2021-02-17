@@ -86,53 +86,58 @@
 
     const consul4 = {
         "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-        "data": {"url": "https://raw.githubusercontent.com/ElDavidLasso/PracticaB2PROG/master/data/sevicioVehi.csv"},
+        "data": {"url": "https://raw.githubusercontent.com/RommelOjeda/Proyecto2doBim/main/data/camionetas.csv"},
         "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
         "encoding": {
-            "x": {"field": "servicio",
+            "x": {"field": "provincia",
                 "type": "nominal",
-                "title": "Servicio"
+                "title": "Provincia"
             },
             "y": {"aggregate":"sum",
                 "field": "cantidad",
-                "title": "Cantidad",
+                "title": "Cantidad"
             },
-
-            "color": {"field": "clase",
+            "color": {"field": "marca",
                 "type": "nominal",
-                "title": "Clases"
+                "title": "Marcas"
             }
         }
     };
     vegaEmbed('#vis4', consul4);
     const consul5 = {
         "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-        "data": {"url": "https://raw.githubusercontent.com/ElDavidLasso/PracticaB2PROG/master/data/sevicioVehi.csv"},
+        "data": {"url": "https://raw.githubusercontent.com/RommelOjeda/Proyecto2doBim/main/data/dieselTanquero.csv"},
         "mark": {"type": "circle", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
         "encoding": {
-            "x": {"field": "servicio",
+            "x": {"field": "marca",
                 "type": "nominal",
-                "title": "Servicio"
+                "title": "Marcas"
             },
             "y": {"aggregate":"sum",
                 "field": "cantidad",
-                "title": "Cantidad",
+                "title": "Cantidad"
             },
 
-            "color": {"field": "clase",
+            "color": {"field": "servicio",
                 "type": "nominal",
-                "title": "Clases"
+                "title": "Servicio"
             }
         }
     };
     vegaEmbed('#vis5', consul5);
+
     const consul6 = {
         "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-        "data": {"url": "https://raw.githubusercontent.com/ElDavidLasso/PracticaB2PROG/master/data/distriVehi.csv"},
-        "mark": "line",
+        "data": {
+            "url": "https://raw.githubusercontent.com/RommelOjeda/Proyecto2doBim/main/data/bmwParticular.csv"
+        },
+        "mark": "area",
         "encoding": {
-            "x": {"field": "servicio", "type": "nominal","title": "Servicio"},
-            "y": {"aggregate":"sum","field": "cantidad","type":"quantitative","title": "Cantidad"}
+            "x": {"field": "provincia", "type": "nominal", "title": "Cantidad"},
+            "y": {"aggregate":"sum",
+                "field": "cantidad",
+                "title": "Cantidad"},
+            "color": {"field": "clase", "type": "nominal"}
         }
     };
     vegaEmbed('#vis6', consul6);
